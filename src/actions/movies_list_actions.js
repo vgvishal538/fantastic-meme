@@ -11,10 +11,10 @@ export const fetchMoviesData = (page) => ({
 
 });
 
-export const fetchMoviesDataSuccess = (moviesData, page) => ({
+export const fetchMoviesDataSuccess = (moviesData) => ({
     type: FETCH_MOVIES_DATA_SUCCESS,
     payload: moviesData,
-    page
+
 });
 
 export const fetchMoviesDataFailure = (error) => ({

@@ -18,10 +18,9 @@ const userReducer = (state = initialState, action) => {
                 error: null,
             };
         case FETCH_MOVIES_DATA_SUCCESS:
-            console.log("statedatareduc" + JSON.stringify(state));
             return {
                 ...state,
-                moviesData: action.payload.results,
+                moviesData: state.moviesData === null ? action.payload.results : [...state.moviesData, ...action.payload.results],
                 loading: false,
                 error: null,
             };
