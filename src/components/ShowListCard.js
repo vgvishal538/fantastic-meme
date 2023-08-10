@@ -58,7 +58,6 @@ const style = StyleSheet.create({
         fontWeight: 'bold'
     },
     imgStyle: {
-        width: 'auto',
         height: 243,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
