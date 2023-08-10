@@ -1,6 +1,6 @@
 import { put, call, takeLatest } from 'redux-saga/effects';
 
-import { FETCH_MOVIES_DATA_REQUEST, fetchMoviesDataSuccess, fetchMoviesDataFailure } from '../actions/movies_list_actions';
+import { FETCH_MOVIES_DATA_REQUEST, fetchMoviesDataSuccess, fetchMoviesDataFailure } from '../actions/MoviesListActions';
 
 import api from '../services/api';
 
@@ -11,7 +11,7 @@ function* getMoviesDataApi(actions) {
 
     try {
 
-        const response = yield call(api.get, `popular?language=en-US&page=${page}`);
+        const response = yield call(api.get, `movie/popular?language=en-US&page=${page}`);
         yield put(fetchMoviesDataSuccess(response.data));
 
     } catch (error) {

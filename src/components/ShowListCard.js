@@ -6,7 +6,7 @@ import FastImage from 'react-native-fast-image'
 const ShowListCard = React.memo(({ item, }) => {
     const formatDate = (inputDate) => {
         const date = new Date(inputDate);
-        const options = { year: 'numeric', month: 'short', day: 'numeric' };
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
         return formattedDate;
     };
@@ -26,7 +26,7 @@ const ShowListCard = React.memo(({ item, }) => {
                     {item.original_title}
                 </Text>
                 <Text style={style.releaseTxt}>
-                    {formatDate(item.release_date)}
+                    {item?.release_date !== "" ? formatDate(item.release_date) : "N/A"}
                 </Text>
                 <Text style={style.overviewStyle} numberOfLines={2} >
                     {item.overview}
@@ -58,7 +58,8 @@ const style = StyleSheet.create({
         fontWeight: 'bold'
     },
     imgStyle: {
-        width: 165, height: 243,
+        width: 'auto',
+        height: 243,
         borderTopLeftRadius: 8,
         borderTopRightRadius: 8,
     },

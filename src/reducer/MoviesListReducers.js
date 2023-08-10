@@ -1,6 +1,6 @@
 import {
     FETCH_MOVIES_DATA_REQUEST, FETCH_MOVIES_DATA_SUCCESS, FETCH_MOVIES_DATA_FAILURE,
-} from '../actions/movies_list_actions';
+} from '../actions/MoviesListActions';
 
 const initialState = {
     moviesData: null,
